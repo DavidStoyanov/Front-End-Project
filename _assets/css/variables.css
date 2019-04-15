@@ -1,14 +1,11 @@
 :root {
-
-
-
+    --basic-color: #FFF;
+    --footer-bgrd-color: #333;
 
     --basic-color-google: #333;
     --bgrd-color-google: #FFF;
-
     --basic-color-insgr: #FFF;
     --bgrd-img-insgr: linear-gradient(to left bottom, #cc3399, #f1347d, #ff4e5c, #ff7338, #ff9900);;
-
     --basic-color-fb: #FFF;
     --bgrd-color-fb: #3B5998;
 }

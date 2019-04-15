@@ -5,21 +5,44 @@
 @import url('variables.css');
 @import url('reset.css');
 @import url('layout.css');
+@import url('grid.css');
 
 @import url('header.css');
 @import url('footer.css');
 
-@import url('authorize-page.css');
+@import url('authorize.css');
 
 
-html {
-    font-family: 'Source Sans Pro', sans-serif;
+
+.gallery-wrapper .card,
+.gallery-wrapper .cnt,
+.gallery-wrapper .slide-show {
+    overflow: hidden;
 }
 
-body {
-
+.gallery-wrapper .cnt {
+    background-color: #EEE;
 }
 
-.site-content {
-    padding: 2em;
+.gallery-wrapper .card,
+.gallery-wrapper .slide-show {
+    position: relative;
+    background-color: #FFF;
 }
+
+.gallery-wrapper .card:after {
+    display: block;
+    content: '';
+    padding-top: 100%;
+}
+
+.gallery-wrapper .card img,
+.gallery-wrapper .slide-show img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%; left: 50%;
+    -webkit-transform: translate(-50%, -50%) scale(1.2);
+            transform: translate(-50%, -50%) scale(1.2);
+}
+
