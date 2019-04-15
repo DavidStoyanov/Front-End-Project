@@ -21,10 +21,6 @@ p, ul, ol, dl, table {
     margin-bottom: var(--sizing-ws-base);
 }
 
-input {
-    font-size: inherit;
-}
-
 p:last-of-type {
     margin-bottom: 0;
 }
@@ -32,6 +28,13 @@ p:last-of-type {
 ul, ol {
     padding-left: var(--sizing-ws-base);
 }
+
+body, input, button, table, textarea  {
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+}
+
 
 @media (min-width: 600px) {
     html { font-size: var(--sizing-fs-tablet); }
