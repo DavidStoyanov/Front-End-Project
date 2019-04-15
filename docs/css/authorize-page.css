@@ -1,0 +1,103 @@
+.auth-cnr {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5em;
+}
+
+.auth-cnr form > fieldset {
+    border: none;
+}
+
+.auth-cnr .signin-section,
+.auth-cnr .signup-section {
+    flex-basis: 40%;
+}
+
+.auth-cnr .signin-section {
+
+}
+
+.auth-cnr .signup-section {
+
+}
+
+.auth-cnr .input-wrapper {
+    padding-bottom: 1em;
+}
+
+
+.auth-cnr .input-icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-wrap: nowrap;
+    border: 2px solid #000;
+    border-radius: 0.3em;
+    background-color: #FFF;
+}
+
+.auth-cnr .input-icon i {
+    display: block;
+    padding: 0 0.75em;
+    position: absolute;
+    right: 0;
+}
+
+.auth-cnr .input-icon input {
+    display: block;
+    padding-right: 1.5em;
+    margin: 0.5em 1em;
+    outline: none;
+    border: none;
+    width: 100%;
+    background-color: #FFF;
+}
+
+.auth-cnr .input-icon input:focus::-webkit-input-placeholder {
+    opacity: 0.5;
+}
+
+.auth-cnr .input-icon input:focus:-ms-input-placeholder {
+    opacity: 0.5;
+}
+
+.auth-cnr .input-icon input:focus::-ms-input-placeholder {
+    opacity: 0.5;
+}
+
+.auth-cnr .input-icon input:focus::placeholder {
+    opacity: 0.5;
+}
+
+
+.buttons-signin,
+.buttons-signup {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.buttons-signin > .go-back {
+    flex: 2 1 auto;
+    margin-right: var(--sizing-ws-base);
+}
+
+.buttons-signin > input[type="submit"] {
+    flex: 7 1 auto;
+}
+
+.buttons-signup {
+    flex: 1 1 auto;
+}
+
+
+
+
+.auth-cnr input[type="button"],
+.auth-cnr .button,
+.auth-cnr button {
+    display: block;
+    padding: 0.5em 1em;
+    border-radius: 1.5em;
+}
+

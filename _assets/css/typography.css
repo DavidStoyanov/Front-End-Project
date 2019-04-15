@@ -21,6 +21,10 @@ p, ul, ol, dl, table {
     margin-bottom: var(--sizing-ws-base);
 }
 
+input {
+    font-size: inherit;
+}
+
 p:last-of-type {
     margin-bottom: 0;
 }
