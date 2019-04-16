@@ -1,26 +1,28 @@
 {
-  "name": "hype",
+  "name": "front-end-project",
   "version": "1.0.0",
-  "description": "learning to use gulp",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DavidStoyanov/FrontEnd-Project-Hype.git"
+    "url": "git+https://github.com/DavidStoyanov/Front-End-Project.git"
   },
-  "author": "D.Stoyanov",
+  "author": "David Stoyanov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DavidStoyanov/FrontEnd-Project-Hype/issues"
+    "url": "https://github.com/DavidStoyanov/Front-End-Project/issues"
   },
-  "homepage": "https://github.com/DavidStoyanov/FrontEnd-Project-Hype#readme",
+  "homepage": "https://github.com/DavidStoyanov/Front-End-Project#readme",
   "devDependencies": {
     "browser-sync": "^2.26.3",
     "child_process": "^1.0.2",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
-    "gulp-exec": "^3.0.2"
+    "gulp-exec": "^3.0.2",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.11.0"
   }
 }
