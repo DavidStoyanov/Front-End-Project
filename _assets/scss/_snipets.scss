@@ -2,3 +2,15 @@
     display: block;
     content: '';
 }
+
+%offer-details {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    position: absolute;
+    bottom: 5%;
+}
