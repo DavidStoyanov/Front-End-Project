@@ -1,16 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 @import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
 
-@import 'typography.scss';
-@import 'variables.scss';
-@import 'reset.scss';
-@import 'layout.scss';
-@import 'grid.scss';
+@import 'snipets';
+//@import 'mixins';
 
-@import 'header.scss';
-@import 'footer.scss';
+@import 'typography';
+@import 'variables';
+@import 'reset';
+@import 'layout';
+@import 'grid';
 
-@import 'authorize.scss';
+@import 'header';
+@import 'footer';
+
+@import 'authorize';
+@import 'offers';
 
 
 .gallery-wrapper .card,

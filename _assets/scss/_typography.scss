@@ -29,6 +29,7 @@ p:last-of-type {
 
 ul, ol {
     padding-left: var(--sizing-ws-base);
+    list-style-type: none;
 }
 
 body, input, button, table, textarea  {

@@ -1,0 +1,86 @@
+.offers-cnr {
+    display: block;
+    background-color: rgb(240,240,240);
+    
+    .offers-nav {
+    
+    }
+    
+    .offers {
+        
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: start;
+            
+            li {
+                $li-fb-offer: 15rem;
+                flex-basis: $li-fb-offer;
+                flex-grow: 0;
+                flex-shrink: 1;
+                margin-bottom: 1em;
+                background-color: #FFF;
+                
+                .offer-cnr {
+                    border: 1px solid #000;
+                }
+                
+                .offer-img-wrapper {
+                    display: block;
+                    position: relative;
+                    overflow: hidden;
+                    
+                    &:before {
+                        @extend %pseudo;
+                        padding-top: (9 / 16) * 100%
+                    }
+                    
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%) scale(0.8);
+                        background-color: #FFF;
+                    }
+                    
+                    .offer-views {
+                        display: flex;
+                        flex-wrap: nowrap;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 0.8em;
+                        padding: 0.5em;
+                        border-radius: 0.3em;
+                        position: absolute;
+                        bottom: 5%;
+                        right: 5%;
+                        background-color: rgba(204,	204, 204, 0.85);
+                        
+                        i {
+                            padding-right: 0.5em;
+                        }
+                        
+                        .offer-views-count {
+                            font-weight: bold;
+                        }
+                    }
+                }
+    
+                .offer-title {
+                    padding: 0 1em;
+                    
+                    p {
+                        width: $li-fb-offer / 100 * 80;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+    }
+}
