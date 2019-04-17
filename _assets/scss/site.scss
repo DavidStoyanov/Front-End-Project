@@ -7,6 +7,9 @@
 @import 'typography';
 @import 'variables';
 @import 'reset';
+
+@import 'animations';
+@import 'buttons';
 @import 'layout';
 @import 'grid';
 
@@ -16,6 +19,12 @@
 @import 'authorize';
 @import 'offers';
 
+.no-select {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
 
 .gallery-wrapper .card,
 .gallery-wrapper .cnt,

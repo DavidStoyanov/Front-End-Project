@@ -10,11 +10,16 @@ let gulp = require("gulp"),
 
 gulp.task("scss", function() {
 	return gulp.src( '_assets/scss/**/*.scss' )
-		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+		.pipe(sass().on('error', sass.logError)) //options: {outputStyle: 'compressed'}
 		.pipe( autoprefixer() )
 		.pipe( gulp.dest( './' + GENERATED_NAME_FOLDER + '/css/' ) )
-		.pipe(browserSync.stream({ match: '**/*.css' }))
-		;
+		.pipe(browserSync.stream({ match: '**/*.css' }));
+});
+
+gulp.task("js", function() {
+	return gulp.src( '_assets/js/**/*.js', { sourcemaps: true })
+		.pipe(gulp.dest( './' + GENERATED_NAME_FOLDER + '/js/', { sourcemaps: true }))
+		.pipe(browserSync.stream({ match: '**/*.js' }));
 });
 
 // Jekyll
@@ -32,6 +37,7 @@ gulp.task("watch", function() {
 	});
 
 	gulp.watch( '_assets/scss/**/*.scss', gulp.series('scss') );
+	gulp.watch( '_assets/js/**/*.js', gulp.series('js') );
 
 	gulp.watch(
 		[
@@ -40,10 +46,10 @@ gulp.task("watch", function() {
 			"./_layouts/*.html",
 			"./_posts/**/*.*"
 		]
-	).on('change', gulp.series('jekyll', 'scss'));
+	).on('change', gulp.series('jekyll', "js", 'scss'));
 
 	gulp.watch( GENERATED_NAME_FOLDER + '/**/*.html' ).on('change', browserSync.reload );
 	gulp.watch( GENERATED_NAME_FOLDER + '/**/*.js' ).on('change', browserSync.reload );
 });
 
-gulp.task("default", gulp.series("jekyll", "scss", "watch"));
+gulp.task("default", gulp.series("jekyll", "js", "scss", "watch"));
