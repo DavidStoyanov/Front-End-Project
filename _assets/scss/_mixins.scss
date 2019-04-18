@@ -1,8 +1,10 @@
 $bp: (
-        'phone':  ( max-width:  600px ),
-        'tablet': ( max-width:  900px ),
-        'laptop':  ( min-width: 901px ),
-        'desktop':  ( min-width: 1200px )
+        'phone':  '( max-width: 600px )',
+        'tablet': '( min-width:  601px) and (max-width: 900px )',
+        'laptop':  '( min-width:  901px) and (max-width: 1200px )',
+        'desktop':  '( min-width:  1201px )',
+        'mobile-device':  '( max-width:  900px )',
+        'desktop-device':  '( min-width:  901px )'
 ) !default;
 
 /// Mixin to manage responsive breakpoints
@@ -24,4 +26,3 @@ $bp: (
         + "Available breakpoints are: #{map-keys($bp)}.";
     }
 }
-

@@ -1,10 +1,10 @@
 @keyframes fade-in-search {
     0% {
-        transform: translateX(100%)
+        transform: translateX(-100%)
     }
     
     50% {
-        transform: translateX(-50%)
+        transform: translateX(+20%)
     }
     
     100% {

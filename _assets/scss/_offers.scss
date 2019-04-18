@@ -3,24 +3,76 @@
     padding: 1em;
     background-color: var(--theme-1-paper);
     
+    max-width: 1000px;
+    margin: 0 auto;
+    
     
     .offers-nav {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1em;
+        display: block;
         margin-bottom: 3em;
-        overflow: hidden;
-        background-color: var(--basic-color);
+        background-color: rgb(250,250,250);
+        box-shadow: inset 0 0 0.5em 0 rgba(244, 244, 239, 1);
+    
+        .search-offers {
+            
+            .search-form {
+                display: flex;
+                flex-wrap: nowrap;
+                padding: 1em;
+                width: 100%;
+    
+                button[type="submit"] {
+                    flex-grow: 1;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    justify-content: center;
+                    align-items: center;
+                    border: none;
+                    order: 2;
+                    color: var(--basic-color);
+                    background-color: var(--theme-1-ink);
+        
+                    i {
+                        display: inline-block;
+                        font-size: 1.2em;
+                        padding-right: 0.3em;
+                    }
+    
+                    &:focus, &:hover {
+                        color: var(--theme-1-wave);
+                    }
+                }
+    
+                input[type="search"] {
+                    flex-grow: 5;
+                    outline: none;
+                    border: 2px solid var(--theme-1-ink);
+                    border-radius: var(--basic-border-radius);
+                    padding: var(--basic-padding-input);
+                    margin-right: 0.5em;
+                    letter-spacing: 0.1em;
+                    order: 1;
+    
+                    &:focus::placeholder {
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
         
         ul.category {
             display: flex;
             flex-direction: row;
+            justify-content: space-between;
             flex-wrap: wrap;
             align-content: start;
-            padding: 0;
+            padding: 0.5em;
             margin: 0;
+            
+            &:after {
+                @extend %pseudo;
+                margin-right: auto;
+            }
             
             li {
                 border-radius: 0.3em;
@@ -39,112 +91,31 @@
                 margin-right: 0;
             }
         }
-        
-        .search-area {
-            display: flex;
-            flex-wrap: nowrap;
-            position: relative;
-    
-            .search-box {
-                opacity: 0;
-                margin-right: 2em;
-                position: absolute;
-                pointer-events: none;
-                z-index: 10;
-                
-                & > form {
-                    display: flex;
-                    flex-wrap: nowrap;
-                }
-                
-                input[name="search"] {
-                    width: 100%;
-                    outline: none;
-                    border: 2px solid #000;
-                    border-radius: 0.3em;
-                    padding: 0 1em;
-                    
-                    &:focus, &:hover {
-                        border-color: #66A6AD;
-                    }
-                    
-                    &:focus::placeholder {
-                        opacity: 0.5;
-                    }
-                }
-                
-                .icon-wrapper {
-                
-                }
-            }
-    
-            @at-root #search-box-toggle { @extend %invisible-input }
-            @at-root #search-box-toggle:checked + .offers-nav .search-area .search-box {
-                animation: fade-in-search;
-                animation-duration: 0.5s;
-                animation-fill-mode: forwards;
-                animation-direction: alternate;
-                opacity: 1;
-                position: relative;
-                pointer-events: all;
-            }
-            
-            @at-root #search-box-toggle:checked + .offers-nav #search-toggle-btn .open { display: none }
-            @at-root #search-box-toggle:checked + .offers-nav #search-toggle-btn .close { display: inline-block }
-    
-            #search-toggle-btn {
-                z-index: 20;
-                color: var(--basic-color);
-                background-color: var(--theme-1-ink);
-        
-                .open, .close {
-                    display: flex;
-                    flex-wrap: nowrap;
-                    align-items: center;
-                    
-                    i {
-                        display: inline-block;
-                        font-size: 1.2em;
-                        padding-right: 0.3em;
-                    }
-                }
-                
-                .open {
-                    display: inline-block;
-                }
-                .close {
-                    display: none;
-                }
-            }
-    
-            
-    
-            
-            
-            
-            
-        }
     }
     
     .offers {
         
         ul {
             display: grid;
-            grid-template-columns: repeat(20, 1fr);
-            grid-gap: 2em;
+            grid-template-columns: repeat(12, 1fr);
             justify-content: center;
             align-content: center;
             padding: 0;
             margin: 0;
+    
+            @include bp('phone') { grid-row-gap: 1em }
+            @include bp('tablet') { grid-gap: 1em }
+            @include bp('laptop') { grid-gap: 1.5em }
+            @include bp('desktop') { grid-gap: 2em }
             
             li {
                 cursor: pointer;
                 background-color: #FFF;
-    
-                @include bp('phone') { grid-column-start: span 20 }
-                @include bp('tablet') { grid-column-start: span 10 }
-                @include bp('laptop') { grid-column-start: span 5 }
-                @include bp('desktop') { grid-column-start: span 4 }
+                
+                @include bp('phone') { grid-column-start: span 12 }
+                @include bp('tablet') { grid-column-start: span 6 }
+                @include bp('laptop') { grid-column-start: span 4 }
+                @include bp('desktop') { grid-column-start: span 3 }
                 
                 .offer-cnr {
                     box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.3);
