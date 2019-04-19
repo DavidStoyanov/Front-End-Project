@@ -6,7 +6,8 @@ body {
 
 .site-content {
     flex-grow: 1;
-    padding: 2em;
+    
+    @include bp('desktop-device') { padding: 2em; };
 }
 
 .container.gallery {

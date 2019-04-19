@@ -16,6 +16,8 @@
 @import 'header';
 @import 'footer';
 
+@import 'navigation';
+
 @import 'authorize';
 @import 'offers';
 
@@ -24,6 +26,10 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+}
+
+.site-content .container {
+    background-color: var(--theme-1-paper);
 }
 
 .gallery-wrapper .card,

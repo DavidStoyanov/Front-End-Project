@@ -1,17 +1,23 @@
+//noinspection CssNoGenericFontName
+
 .offers-cnr {
     display: block;
     padding: 1em;
-    background-color: var(--theme-1-paper);
-    
     max-width: 1000px;
     margin: 0 auto;
     
+    #category-box-toggle {
+        @extend %invisible-input;
+    }
     
     .offers-nav {
         display: block;
         margin-bottom: 3em;
-        background-color: rgb(250,250,250);
-        box-shadow: inset 0 0 0.5em 0 rgba(244, 244, 239, 1);
+        
+        @include bp('desktop-device') {
+            box-shadow: inset 0 0 0.5em 0 rgba(244, 244, 239, 1);
+            background-color: rgb(250,250,250);
+        }
     
         .search-offers {
             
@@ -27,6 +33,7 @@
                     flex-wrap: nowrap;
                     justify-content: center;
                     align-items: center;
+                    outline: none;
                     border: none;
                     order: 2;
                     color: var(--basic-color);
@@ -59,6 +66,23 @@
                 }
             }
         }
+    
+        #category-toggle-button {
+            display: flex;
+            justify-content: center;
+            background-color: var(--theme-1-wave);
+        
+            &:before {
+                display: inline-block;
+                content: '\f0c9';
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
+                padding-right: 0.5rem;
+            }
+    
+            @include bp('mobile-device') { display: flex }
+            @include bp('desktop-device') { display: none }
+        }
         
         ul.category {
             display: flex;
@@ -68,6 +92,18 @@
             align-content: start;
             padding: 0.5em;
             margin: 0;
+    
+            @include bp('mobile-device') {
+                display: none;
+                padding: 1em 0;
+                
+                @at-root #category-box-toggle:checked + .offers-nav ul.category {
+                    display: flex;
+                    flex-direction: column;
+                    align-content: stretch;
+                }
+            }
+            
             
             &:after {
                 @extend %pseudo;
@@ -76,19 +112,28 @@
             
             li {
                 border-radius: 0.3em;
-                padding: 0.5em 1em;
-                margin: 0.5em;
+                margin: 0.5em 0;
+                border: 1px solid var(--theme-1-wave);
                 background-color: var(--theme-1-wave);
+    
+                @include bp('desktop-device') { margin: 0.5em; }
+                
+                &:focus, &:hover {
+                    border-color: #000;
+                    text-decoration: underline;
+                    //animation: shake 0.2s forwards;
+                }
                 
                 a {
                     display: block;
+                    padding: 0.5em 1em;
                     text-decoration: none;
                     color: #000;
+    
+                    &:hover {
+                    
+                    }
                 }
-            }
-            
-            li:last-of-type {
-                margin-right: 0;
             }
         }
     }
@@ -109,8 +154,14 @@
             @include bp('desktop') { grid-gap: 2em }
             
             li {
+                position: relative;
                 cursor: pointer;
+                transition: transform 0.3s ease-in;
                 background-color: #FFF;
+    
+                &:hover {
+                    transform: scale(1.05);
+                }
                 
                 @include bp('phone') { grid-column-start: span 12 }
                 @include bp('tablet') { grid-column-start: span 6 }
