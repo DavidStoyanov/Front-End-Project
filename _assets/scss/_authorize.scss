@@ -70,8 +70,10 @@
     .signin, .signup {
         flex-basis: 40%;
     
+        @include bp('phone') { width: 90%; }
+        @include bp('tablet') { width: 65%; }
+        
         @include bp('mobile-device') {
-            width: 65%;
             padding: 3em 0 1em 0;
         }
         

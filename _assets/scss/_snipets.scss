@@ -26,6 +26,11 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     
+    & > .go-back,
+    & > input[type="submit"] {
+        @include bp('phone') { font-size: 1rem; }
+    }
+    
     & > .go-back {
         flex: 2 1 auto;
         margin-right: var(--sizing-ws-base);
