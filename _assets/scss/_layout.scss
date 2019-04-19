@@ -6,8 +6,18 @@ body {
 
 .site-content {
     flex-grow: 1;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(51, 51, 51, 0.2)), url("../img/content-2.jpg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
     
-    @include bp('desktop-device') { padding: 2em; };
+    @include bp('desktop-device') { padding: 0.5em 2em; };
+    
+    .container {
+        background-color: 	rgba(244, 244, 239, 0.3);
+    
+        @include bp('desktop-device') { padding: 0.5em };
+    }
 }
 
 .container.gallery {

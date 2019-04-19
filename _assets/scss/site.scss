@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 @import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
 
-@import 'snipets';
 @import 'mixins';
+@import 'snipets';
 
 @import 'typography';
 @import 'variables';
@@ -21,15 +21,15 @@
 @import 'authorize';
 @import 'offers';
 
+html {
+    scroll-behavior: smooth;
+}
+
 .no-select {
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-}
-
-.site-content .container {
-    background-color: var(--theme-1-paper);
 }
 
 .gallery-wrapper .card,

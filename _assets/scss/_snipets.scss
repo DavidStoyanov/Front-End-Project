@@ -20,3 +20,22 @@
     position: absolute;
     pointer-events: none;
 }
+
+%authorize-main-btns {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    
+    & > .go-back {
+        flex: 2 1 auto;
+        margin-right: var(--sizing-ws-base);
+        background-color: #928787;
+        
+        @include bp('desktop-device') { display: none; }
+    }
+    
+    & > input[type="submit"] {
+        flex: 8 1 auto;
+        background-color: var(--theme-1-soft-blue);
+    }
+}

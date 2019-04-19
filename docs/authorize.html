@@ -29,7 +29,7 @@
         
         
         <li>
-            <a href="/authorize/">
+            <a href="/authorize.html">
                 <span class="title">Sign in</span>
                 <span class="date"></span>
             </a>
@@ -65,9 +65,14 @@
 
     <main class="site-content">
         <div class="container auth-cnr">
-    <div class="signin-section">
+
+    <section class="signin" id="login">
         <header>
-            <h5>Login to your account</h5>
+            <h2>Login to your account</h2>
+            <h4 class="mobile-hint-header">
+                <span>If you dont have an account, you can always register</span>
+                <a href="#register">here!</a>
+            </h4>
         </header>
 
         <form action="" method="POST">
@@ -86,9 +91,9 @@
                     </div>
                 </section>
 
-                <section class="buttons-signin">
-                    <input type="button" class="go-back" value="Go Back">
-                    <input type="submit" class="button" value="Login">
+                <section class="signin-buttons">
+                    <input class="button go-back" type="button" value="Go Back">
+                    <input class="button" type="submit" value="Login">
                 </section>
             </fieldset>
         </form>
@@ -113,12 +118,15 @@
                 <span>Facebook</span>
             </button>
         </div>
-    </div>
+    </section>
 
-    <div class="signup-section">
-        <header>
-            <h5>Create an account</h5>
-        </header>
+    <section class="signup" id="register">
+
+        <h2>Create an account</h2>
+        <h4 class="mobile-hint-header">
+            <span>Already got an account?</span>
+            <a href="#login">Log in</a>
+        </h4>
 
         <form action="/#" method="POST">
             <fieldset>
@@ -143,12 +151,13 @@
                     </div>
                 </section>
 
-                <section class="buttons-signup">
+                <section class="signup-buttons">
+                    <input class="button go-back" type="button" value="Go Back">
                     <input type="submit" class="button" value="Register">
                 </section>
             </fieldset>
         </form>
-    </div>
+    </section>
 </div>
 
     </main>

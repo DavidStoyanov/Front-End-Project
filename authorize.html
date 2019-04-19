@@ -1,14 +1,19 @@
 ---
 layout: page
 title: Sign in
-permalink: /authorize/
+permalink: /authorize.html
 body_class: page
 ---
 
 <div class="container auth-cnr">
-    <div class="signin-section">
+
+    <section class="signin" id="login">
         <header>
-            <h5>Login to your account</h5>
+            <h2>Login to your account</h2>
+            <h4 class="mobile-hint-header">
+                <span>If you dont have an account, you can always register</span>
+                <a href="#register">register</a>
+            </h4>
         </header>
 
         <form action="" method="POST">
@@ -27,9 +32,9 @@ body_class: page
                     </div>
                 </section>
 
-                <section class="buttons-signin">
-                    <input type="button" class="go-back" value="Go Back">
-                    <input type="submit" class="button" value="Login">
+                <section class="signin-buttons">
+                    <input class="button go-back" type="button" value="Go Back">
+                    <input class="button" type="submit" value="Login">
                 </section>
             </fieldset>
         </form>
@@ -54,12 +59,15 @@ body_class: page
                 <span>Facebook</span>
             </button>
         </div>
-    </div>
+    </section>
 
-    <div class="signup-section">
-        <header>
-            <h5>Create an account</h5>
-        </header>
+    <section class="signup" id="register">
+
+        <h2>Create an account</h2>
+        <h4 class="mobile-hint-header">
+            <span>Already got an account?</span>
+            <a href="#login">Log in</a>
+        </h4>
 
         <form action="/#" method="POST">
             <fieldset>
@@ -84,10 +92,11 @@ body_class: page
                     </div>
                 </section>
 
-                <section class="buttons-signup">
+                <section class="signup-buttons">
+                    <input class="button go-back" type="button" value="Go Back">
                     <input type="submit" class="button" value="Register">
                 </section>
             </fieldset>
         </form>
-    </div>
+    </section>
 </div>

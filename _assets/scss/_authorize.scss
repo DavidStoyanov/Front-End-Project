@@ -1,150 +1,161 @@
+//noinspection SpellCheckingInspection
+
 .auth-cnr {
     display: flex;
     justify-content: space-around;
-    font-size: 1.5em;
-}
-
-.auth-cnr form > fieldset {
-    border: none;
-}
-
-.auth-cnr .signin-section,
-.auth-cnr .signup-section {
-    flex-basis: 40%;
-}
-
-.auth-cnr .signin-section {
-
-}
-
-.auth-cnr .signup-section {
-
-}
-
-.auth-cnr .input-wrapper {
-    padding-bottom: 1em;
-}
-
-.auth-cnr .input-icon {
-    display: flex;
-    align-items: center;
-    position: relative;
-    flex-wrap: nowrap;
-    border: 2px solid #000;
-    border-radius: 0.3em;
-    background-color: #FFF;
-}
-
-.auth-cnr .input-icon i {
-    display: block;
-    padding: 0 0.75em;
-    position: absolute;
-    right: 0;
-}
-
-.auth-cnr .input-icon input {
-    display: block;
-    padding-right: 1.5em;
-    margin: 0.5em 1em;
-    outline: none;
-    border: none;
-    width: 100%;
-    background-color: #FFF;
-}
-
-.auth-cnr .input-icon input:focus::placeholder {
-    opacity: 0.5;
-}
-
-
-
-.buttons-signin,
-.buttons-signup {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
-
-.buttons-signin > .go-back {
-    flex: 2 1 auto;
-    margin-right: var(--sizing-ws-base);
-}
-
-.buttons-signin > input[type="submit"] {
-    flex: 7 1 auto;
-}
-
-.buttons-signup > input[type="submit"] {
-    flex: 1 1 auto;
-}
-
-.alt-signin {
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.alt-signin #google-signin {
-    order: 2;
-    color: var(--basic-color-google);
-    background-color: var(--bgrd-color-google);
-}
-
-.alt-signin #instagram-signin {
-    order: 3;
-    color: var(--basic-color-insgr);
-    background-image: var(--bgrd-img-insgr);
-}
-
-.alt-signin #facebook-signin {
-    order: 1;
-    color: var(--basic-color-fb);
-    background-color: var(--bgrd-color-fb);
-}
-
-
-.auth-cnr input[type="button"],
-.auth-cnr .button,
-.auth-cnr button {
-    display: block;
-    padding: 0.5em 1em;
-    outline: none;
-    border: 2px solid #000;
-    border-radius: 1.5em;
-    cursor: pointer;
-}
-
-
-
-.alt-separator {
-    padding: 1.5em 0;
-    text-align: center;
-}
-
-.alt-signin {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
-
-.alt-signin > button.alt-btn {
-    flex: 0 1 30%;
-    align-items: center;
-    border-radius: 1em;
-    position: relative;
-}
-
-.alt-signin > button i {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-}
-
-.alt-signin > button i:before {
-    padding: 0 0.75em;
-}
-
-.alt-signin > button span {
-    margin-left: 1.5em;
-    text-align: left;
+    font-size: 1.2em;
+    
+    @include bp('mobile-device') {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    form > fieldset {
+        border: none;
+    }
+    
+    .input-wrapper {
+        padding-bottom: 1em;
+    }
+    
+    .input-icon {
+        display: flex;
+        align-items: center;
+        position: relative;
+        flex-wrap: nowrap;
+        border: 1px solid var(--theme-1-ink);
+        border-radius: 0.3em;
+        background-color: #FFF;
+    
+        input {
+            display: block;
+            padding-right: 1.5em;
+            margin: 0.5em 1em;
+            outline: none;
+            border: none;
+            width: 100%;
+            background-color: #FFF;
+            
+            &:focus::placeholder {
+                opacity: 0.5;
+            }
+        }
+        
+        i {
+            display: block;
+            padding: 0 0.75em;
+            position: absolute;
+            right: 0;
+    
+            &:focus {
+                color: var(--theme-1-soft-blue);
+            }
+        }
+    }
+    
+    .button, button {
+        display: block;
+        padding: 0.5em 1em;
+        outline: none;
+        border: 1.5px solid var(--theme-1-ink);
+        border-radius: 1.5em;
+        cursor: pointer;
+    }
+    
+    .mobile-hint-header a {
+        color: var(--basic-link-color);
+    }
+    
+    
+    .signin, .signup {
+        flex-basis: 40%;
+    
+        @include bp('mobile-device') {
+            width: 65%;
+            padding: 3em 0 1em 0;
+        }
+        
+        @include bp('desktop-device') {
+            .mobile-hint-header { display: none; }
+        }
+    }
+    
+    .signin {
+    
+        &-buttons {
+            @extend %authorize-main-btns;
+        }
+    
+        .alt-separator {
+            padding: 1.5em 0;
+            text-align: center;
+        }
+        
+        .alt-signin {
+            display: flex;
+            justify-content: space-between;
+            
+            @include bp('phone') {
+                flex-wrap: wrap;
+            }
+        
+            & > button.alt-btn {
+                flex: 0 1 30%;
+                align-items: center;
+                border-radius: 1em;
+                position: relative;
+                
+                @include bp('phone') {
+                    flex-basis: 100%;
+                    margin-bottom: 0.2em;
+                }
+            }
+        
+            & > button i {
+                display: flex;
+                align-items: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                
+                @include bp('phone') { font-size: 1.2em; }
+            }
+        
+            & > button i:before {
+                padding: 0 0.75em;
+            }
+        
+            & > button span {
+                margin-left: 1.5em;
+                text-align: left;
+            }
+        
+            #google-signin {
+                order: 2;
+                color: var(--basic-color-google);
+                background-color: var(--bgrd-color-google);
+            }
+        
+            #instagram-signin {
+                order: 3;
+                color: var(--basic-color-insgr);
+                background-image: var(--bgrd-img-insgr);
+            }
+        
+            #facebook-signin {
+                order: 1;
+                color: var(--basic-color-fb);
+                background-color: var(--bgrd-color-fb);
+            }
+        }
+    }
+    
+    .signup {
+    
+        &-buttons {
+            @extend %authorize-main-btns;
+        }
+    }
 }
