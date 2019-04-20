@@ -8,10 +8,12 @@
         background-position: center;
         background-size: cover;
         
-        &:after {
-            display: block;
-            content: '';
-            padding-bottom: calc((9 / 64) * 100%)
+        @include bp('desktop-device') {
+            &:after {
+                display: block;
+                content: '';
+                padding-bottom: calc((9 / 64) * 100%)
+            }
         }
     }
     
@@ -23,19 +25,27 @@
         padding: 1em;
         background-color: rgba(black, 0.8);
         
+        @include bp('mobile-device') {
+            flex-direction: column;
+        }
+        
         a { outline: none; }
         
         .site-tittle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
             font-size: 2rem;
             font-weight: bold;
             font-family: "Unispace", sans-serif;
             margin: 0;
             color: var(--theme-1-aluminium);
-    
-            &:focus a, &:hover a {
-                color: var(--theme-1-pool-blue-rgba);
-            }
             
+            @include bp('mobile-device') {
+                margin-bottom: 1em;
+            }
+    
             a {
                 font: inherit;
                 text-decoration: none;
@@ -43,6 +53,10 @@
     
                 &:focus {
                     text-decoration: underline;
+                }
+    
+                &:focus, &:hover {
+                    color: var(--theme-1-pool-blue-rgba);
                 }
             }
         }

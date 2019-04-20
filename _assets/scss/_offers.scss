@@ -6,7 +6,7 @@
     max-width: 1000px;
     margin: 0 auto;
     
-    #category-box-toggle {
+    @at-root #category-box-toggle {
         @extend %invisible-input;
     }
     
@@ -91,6 +91,8 @@
             @at-root #category-box-toggle:checked + .offers-nav #category-toggle-button {
                 color: var(--theme-1-wave);
                 background-color: var(--theme-1-ink);
+                
+                &:before { content: '\f410'; }
             }
         }
         

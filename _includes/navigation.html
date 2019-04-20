@@ -1,10 +1,15 @@
+<input type="checkbox" id="toggle-main-navigation">
+
 <nav class="site-nav" id="navigation">
+    <label class="btn no-select" id="nav-toggle-btn" for="toggle-main-navigation">
+        <span>Menu</span>
+    </label>
     <ul>
         {% assign ordered_pages = site.pages | sort:"order" %}
         {% for page in ordered_pages %}
         {% if page.url != '/feed.xml' and page.url != '/' %}
         <li class="{% if page.url == '/authorize.html' %}sign-in-nav{% endif %}">
-            <a href="{{ page.url }}">
+            <a href="{{ site.baseurl }}{{ page.url }}">
                 <span class="title">{{ page.title }}</span>
             </a>
         </li>
