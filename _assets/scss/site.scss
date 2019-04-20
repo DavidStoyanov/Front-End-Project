@@ -18,43 +18,8 @@
 
 @import 'elements/navigation';
 
-@import 'pages/authorize';
+@import 'pages/home';
 @import 'pages/offers';
-@import 'pages/contacts';
 @import 'pages/about';
-
-html {
-    scroll-behavior: smooth;
-}
-
-.gallery-wrapper .card,
-.gallery-wrapper .cnt,
-.gallery-wrapper .slide-show {
-    overflow: hidden;
-}
-
-.gallery-wrapper .cnt {
-    background-color: #EEE;
-}
-
-.gallery-wrapper .card,
-.gallery-wrapper .slide-show {
-    position: relative;
-    background-color: #FFF;
-}
-
-.gallery-wrapper .card:after {
-    display: block;
-    content: '';
-    padding-top: 100%;
-}
-
-.gallery-wrapper .card img,
-.gallery-wrapper .slide-show img {
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%) scale(1.2);
-}
-
+@import 'pages/contacts';
+@import 'pages/authorize';
