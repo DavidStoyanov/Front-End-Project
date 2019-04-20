@@ -5,6 +5,13 @@
     cursor: pointer;
 }
 
+.no-select {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
 #scroll-to-top {
     position: fixed;
     bottom: 7%;
@@ -12,16 +19,20 @@
     overflow: hidden;
     border-radius: 50%;
     text-decoration: none;
+    transition: transform 0.1s ease-in-out;
     padding: 1.5rem;
     z-index: 100;
     
     color: var(--basic-color);
     background-color: rgba(black, 0.5);
     
+    &:hover {
+        transform: scale(1.2);
+    }
+    
     span {
         position: relative;
         overflow: hidden;
-    
         &:after {
             position: absolute;
             top: 50%; left: 50%;

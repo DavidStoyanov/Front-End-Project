@@ -44,3 +44,21 @@
         background-color: var(--theme-1-soft-blue);
     }
 }
+
+%fancy-colorize {
+    padding: 0.5em;
+    outline: none;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #DDD;
+    border-top-color: #999;
+    border-left-color: #999;
+    border-radius: var(--basic-border-radius);
+    background-color: var(--basic-color);
+    
+    &:focus, &:hover {
+        border-color: var(--theme-1-pool-blue-rgba);
+        border-top-color: var(--theme-1-soft-blue);
+        border-left-color: var(--theme-1-soft-blue);
+    }
+}

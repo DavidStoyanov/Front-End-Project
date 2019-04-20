@@ -9,31 +9,22 @@
 @import 'reset';
 
 @import 'animations';
-@import 'buttons';
+@import 'elements/elements';
 @import 'layout';
-@import 'grid';
+@import 'elements/grid';
 
-@import 'header';
-@import 'footer';
+@import 'elements/header';
+@import 'elements/footer';
 
-@import 'navigation';
+@import 'elements/navigation';
 
-@import 'authorize';
-@import 'offers';
+@import 'pages/authorize';
+@import 'pages/offers';
+@import 'pages/contacts';
+@import 'pages/about';
 
 html {
     scroll-behavior: smooth;
-}
-
-body {
-    position: relative;
-}
-
-.no-select {
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
 }
 
 .gallery-wrapper .card,

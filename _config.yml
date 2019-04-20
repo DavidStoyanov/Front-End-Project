@@ -3,8 +3,8 @@ email: on-shoe@yahoo.com
 description: On-Shoe online shop
 destination: docs
 incremental: false
-#baseurl: ""
-baseurl: "/Front-End-Project"
+baseurl: ""
+#baseurl: "/Front-End-Project"
 url: ""
 twitter_username: jekyllrb
 github_username:  jekyll
