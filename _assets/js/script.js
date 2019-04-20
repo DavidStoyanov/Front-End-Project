@@ -1,13 +1,14 @@
-$(function() {
-    // $('#search-toggle-btn').on('click', () => {
-    //     let searchBox = $('.search-box');
-    //     let checkBox = $('#search-box-toggle');
-    //     if (searchBox.css('opacity') == 1.0) {
-    //         searchBox.css('opacity', '0.0')
-    //         checkBox.attr('checked', false)
-    //     } else {
-    //         searchBox.css('opacity', '1.0')
-    //         checkBox.attr('checked', true)
-    //     }
-    // })
+document.addEventListener("DOMContentLoaded", function(event) {
+    function checkVisible(elm) {
+        var rect = elm.getBoundingClientRect();
+        var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+        return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+    }
+
+    let goUpBtn = document.getElementById('scroll-to-top');
+    let inner = document.getElementById('head-inner');
+
+    document.addEventListener("scroll", () => {
+        goUpBtn.style.display = checkVisible(inner) ? 'none' : 'block'
+    });
 });

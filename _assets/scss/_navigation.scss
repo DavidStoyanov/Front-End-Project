@@ -1,0 +1,38 @@
+.site-nav {
+    
+    ul {
+        display: flex;
+        font-size: 1.2em;
+        margin: 0;
+        
+        & > li {
+        
+        }
+    }
+    
+    li {
+        display: block;
+        padding: 0 0.75em;
+        overflow: hidden;
+    
+        &:focus a, &:hover a {
+            color: var(--theme-1-ink);
+            background-color: var(--theme-1-aluminium);
+        }
+    }
+    
+    li.sign-in-nav {
+        margin-left: auto;
+    }
+    
+    a {
+        display: block;
+        font-weight: bold;
+        position: relative;
+        text-decoration: none;
+        border-radius: var(--basic-border-radius);
+        padding: var(--basic-padding-input);
+        color: var(--theme-1-ink);
+        background-color: var(--theme-1-pool-blue-rgba);
+    }
+}

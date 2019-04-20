@@ -25,6 +25,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    position: relative;
+}
+
 .no-select {
     user-select: none;
     -webkit-user-select: none;
