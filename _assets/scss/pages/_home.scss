@@ -13,14 +13,11 @@
             padding-top: 9 / 32 *100%;
         }
         
-        .show {
+        .show-offer {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             overflow: hidden;
-            
-            &:nth-of-type(2) {
-                z-index: 100;
-            }
+            opacity: 0;
             
             img {
                 position: absolute;
@@ -35,30 +32,34 @@
     .left, .right {
         display: block;
         font-size: 2em;
-        padding: 1em 0.5em;
-        border-top-right-radius: 50%;
-        border-bottom-right-radius: 50%;
-        background-color: #CCC;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        padding: 0.3em;
+        position: absolute;
+        top: 50%;
+        transform: translate(0%, -50%);
+        color: var(--basic-color);
+        background-color: rgba(30, 30, 30, 0.7);
+        z-index: 1000;
+        cursor: pointer;
+        
+        &:focus, &:hover {
+            color: var(--theme-1-ink);
+            background-color: rgba(200, 0, 0, 0.7);
+        }
     }
     
     .left {
-        position: absolute;
-        top: 50%;
         left: 0;
-        transform: translate(0%, -50%);
-        z-index: 1000;
+        padding-right: 0.5em;
+        border-top-right-radius: 50rem;
+        border-bottom-right-radius: 50rem;
     }
     
     .right {
-    
+        right: 0;
+        padding-left: 0.5em;
+        border-top-left-radius: 50rem;
+        border-bottom-left-radius: 50rem;
     }
 }
-
-//&:before {
-//    display: block;
-//    position: rel
-//    content: 'a';
-//    padding: 1em;
-//    background-color: red;
-//    z-index: 10;
-//}

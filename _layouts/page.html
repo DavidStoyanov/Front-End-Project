@@ -5,7 +5,6 @@
     <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/site.css">
-    <script src="{{ site.baseurl }}/js/script.js"></script>
 </head>
 <body class="{{ page.body_class }} {{ page.title | slugify }}">
 
@@ -30,6 +29,9 @@
     <a id="scroll-to-top" href="#head-inner">
         <span></span>
     </a>
+
+    <script src="{{ site.baseurl }}/js/scrollUp.js"></script>
+    <script src="{{ site.baseurl }}/js/slideshow.js"></script>
 
 </body>
 </html>

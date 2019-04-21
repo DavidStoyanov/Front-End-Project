@@ -11,25 +11,25 @@ body_class: page
 <div class="container home">
     <section class="slide-show">
         <div class="wrapper">
-            <a href="#" class="show" id="show-1">
+            <a href="#" class="show-offer" id="show-1">
                 <img src="{{ site.baseurl }}/img/show-1.jpg" alt="">
             </a>
 
-            <a href="#" class="show" id="show-2">
+            <a href="#" class="show-offer" id="show-2">
                 <img src="{{ site.baseurl }}/img/show-2.jpg" alt="">
             </a>
 
-            <a href="#" class="show" id="show-3">
+            <a href="#" class="show-offer" id="show-3">
                 <img src="{{ site.baseurl }}/img/header-1.jpg" alt="">
             </a>
 
-            <a href="#" class="show" id="show-4">
+            <a href="#" class="show-offer" id="show-4">
                 <img src="{{ site.baseurl }}/img/header-2.jpg" alt="">
             </a>
         </div>
 
-        <span class="left"><</span>
-        <span class="right">></span>
+        <span class="left no-select" id="show-prev-offer" onclick="prevImg(-1)"></span>
+        <span class="right no-select" id="show-next-offer" onclick="nextImg(+1)"></span>
     </section>
 
 </div>

@@ -454,16 +454,15 @@ body {
       display: block;
       content: '';
       padding-top: 28.125%; }
-    .home .slide-show .show {
+    .home .slide-show .show-offer {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      overflow: hidden; }
-      .home .slide-show .show:nth-of-type(2) {
-        z-index: 100; }
-      .home .slide-show .show img {
+      overflow: hidden;
+      opacity: 0; }
+      .home .slide-show .show-offer img {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -474,17 +473,30 @@ body {
   .home .left, .home .right {
     display: block;
     font-size: 2em;
-    padding: 1em 0.5em;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    background-color: #CCC; }
-  .home .left {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding: 0.3em;
     position: absolute;
     top: 50%;
-    left: 0;
     -webkit-transform: translate(0%, -50%);
             transform: translate(0%, -50%);
-    z-index: 1000; }
+    color: var(--basic-color);
+    background-color: rgba(30, 30, 30, 0.7);
+    z-index: 1000;
+    cursor: pointer; }
+    .home .left:focus, .home .left:hover, .home .right:focus, .home .right:hover {
+      color: var(--theme-1-ink);
+      background-color: rgba(200, 0, 0, 0.7); }
+  .home .left {
+    left: 0;
+    padding-right: 0.5em;
+    border-top-right-radius: 50rem;
+    border-bottom-right-radius: 50rem; }
+  .home .right {
+    right: 0;
+    padding-left: 0.5em;
+    border-top-left-radius: 50rem;
+    border-bottom-left-radius: 50rem; }
 
 .offers-cnr {
   display: block;
