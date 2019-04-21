@@ -16,3 +16,6 @@ function cuicleImgs(n) {
     images[currentImg - 1].style.opacity = '1';
 }
 
+setInterval(function() {
+    nextImg(+1);
+}, 3000);

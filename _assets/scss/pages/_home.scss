@@ -1,6 +1,62 @@
 .home {
     position: relative;
     
+    
+    .light {
+        background-color: rgba(yellow, 0.6);
+        
+        & > * {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0;
+        }
+    }
+    
+    .best-offers {
+        border-top-left-radius: 0.5em;
+        border-top-right-radius: 0.5em;
+        
+        p {
+            animation: rotate-3d;
+            animation-duration: 5s;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+        }
+    }
+    
+    .see-more {
+        border-bottom-left-radius: 0.5em;
+        border-bottom-right-radius: 0.5em;
+        transition: background-color 0.5s ease-in;
+        cursor: pointer;
+    
+        &:focus, &:hover {
+            background-color: rgba(51, 204, 51, 0.85);
+            
+            a {
+                animation: go-to-shop;
+                animation-duration: 5s;
+                animation-fill-mode: both;
+                animation-iteration-count: infinite;
+            }
+        }
+        
+        a {
+            display: block;
+            text-decoration: none;
+            color: #000;
+            
+            &:after {
+                display: inline-block;
+                content: '\f101';
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+            }
+        }
+    }
+    
     .slide-show {
         display: block;
         position: relative;
@@ -16,6 +72,7 @@
         .show-offer {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
+            transition: opacity 1s ease-out;
             overflow: hidden;
             opacity: 0;
             
@@ -45,7 +102,10 @@
         
         &:focus, &:hover {
             color: var(--theme-1-ink);
-            background-color: rgba(200, 0, 0, 0.7);
+            background-color: rgba(yellow, 0.7);
+            animation: shakeY;
+            animation-duration: 0.5s;
+            animation-direction: alternate;
         }
     }
     

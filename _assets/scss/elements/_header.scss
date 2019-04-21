@@ -22,7 +22,7 @@
         position: sticky;
         top: 0; left: 0;
         align-content: baseline;
-        padding: 1em;
+        padding: 0.25em;
         background-color: rgba(black, 0.8);
         
         @include bp('mobile-device') {

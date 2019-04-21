@@ -5,7 +5,7 @@
     
     @include bp('mobile-device') {
         grid-template-columns: repeat(2, 50%);
-        grid-template-rows: auto 15vh auto 15vh;
+        grid-template-rows: repeat(3, auto 30vh);
         grid-template-areas:
                 "icr1 icr1"
                 "icd1 icd1"

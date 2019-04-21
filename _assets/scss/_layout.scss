@@ -20,14 +20,19 @@ body {
     .container {
         background-color: 	rgba(244, 244, 239, 0.5);
     
-        @include bp('mobile-device') { padding: 0.5em };
-        @include bp('desktop-device') { padding: 1em };
+        @include bp('mobile-device') { padding: 1em };
+        @include bp('desktop-device') { padding: 1.5em };
     
         &.home, &.contacts, &.about-us {
             @include bp('desktop-device') { padding: 1em };
         }
     
-        &.home, &.contacts {
+        &.home {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+    
+        &.contacts {
             max-width: 800px;
             margin: 0 auto;
         }

@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
 @import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css");
-.offers-cnr .offers-nav ul.category:after, .offers-cnr .offers ul li .offer-img-wrapper:before, .about-us .gallery-wrapper .card:after {
+.offers-cnr .offers-nav ul.category:after, .offers-cnr .offers .offer-cnr .offer-img-wrapper:before, .about-us .gallery-wrapper .card:after {
   display: block;
   content: ''; }
 
-.offers-cnr .offers ul li .offer-img-wrapper .offer-views, .offers-cnr .offers ul li .offer-img-wrapper .offer-price {
+.offers-cnr .offers .offer-cnr .offer-img-wrapper .offer-views, .offers-cnr .offers .offer-cnr .offer-img-wrapper .offer-price {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
@@ -184,21 +184,95 @@ html {
     -webkit-transform: translateX(4px);
             transform: translateX(4px); } }
 
+@-webkit-keyframes shakeY {
+  0%, 100% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  20%, 80% {
+    -webkit-transform: translateY(-52%);
+            transform: translateY(-52%); }
+  40%, 60% {
+    -webkit-transform: translateY(-47%);
+            transform: translateY(-47%); }
+  50% {
+    -webkit-transform: translateY(-55%);
+            transform: translateY(-55%); } }
+
+@keyframes shakeY {
+  0%, 100% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  20%, 80% {
+    -webkit-transform: translateY(-52%);
+            transform: translateY(-52%); }
+  40%, 60% {
+    -webkit-transform: translateY(-47%);
+            transform: translateY(-47%); }
+  50% {
+    -webkit-transform: translateY(-55%);
+            transform: translateY(-55%); } }
+
 @-webkit-keyframes rotate-3d {
-  from {
+  0% {
     -webkit-transform: rotate3d(0, 0, 0, 0rad);
             transform: rotate3d(0, 0, 0, 0rad); }
-  to {
-    -webkit-transform: rotate3d(0, 1, 0, 3.142rad);
-            transform: rotate3d(0, 1, 0, 3.142rad); } }
+  10% {
+    -webkit-transform: rotate3d(1, 0, 0, 6.284rad);
+            transform: rotate3d(1, 0, 0, 6.284rad); }
+  20% {
+    -webkit-transform: rotate3d(0, 0, 0, 0rad);
+            transform: rotate3d(0, 0, 0, 0rad); }
+  100% {
+    -webkit-transform: rotate3d(0, 0, 0, 0rad);
+            transform: rotate3d(0, 0, 0, 0rad); } }
 
 @keyframes rotate-3d {
-  from {
+  0% {
     -webkit-transform: rotate3d(0, 0, 0, 0rad);
             transform: rotate3d(0, 0, 0, 0rad); }
-  to {
-    -webkit-transform: rotate3d(0, 1, 0, 3.142rad);
-            transform: rotate3d(0, 1, 0, 3.142rad); } }
+  10% {
+    -webkit-transform: rotate3d(1, 0, 0, 6.284rad);
+            transform: rotate3d(1, 0, 0, 6.284rad); }
+  20% {
+    -webkit-transform: rotate3d(0, 0, 0, 0rad);
+            transform: rotate3d(0, 0, 0, 0rad); }
+  100% {
+    -webkit-transform: rotate3d(0, 0, 0, 0rad);
+            transform: rotate3d(0, 0, 0, 0rad); } }
+
+@-webkit-keyframes go-to-shop {
+  0% {
+    -webkit-transform: translateX(-5em);
+            transform: translateX(-5em); }
+  5% {
+    -webkit-transform: translateX(-1em);
+            transform: translateX(-1em); }
+  10% {
+    -webkit-transform: translateX(-3em);
+            transform: translateX(-3em); }
+  15% {
+    -webkit-transform: translateX(4em);
+            transform: translateX(4em); }
+  100% {
+    -webkit-transform: translateX(4em);
+            transform: translateX(4em); } }
+
+@keyframes go-to-shop {
+  0% {
+    -webkit-transform: translateX(-5em);
+            transform: translateX(-5em); }
+  5% {
+    -webkit-transform: translateX(-1em);
+            transform: translateX(-1em); }
+  10% {
+    -webkit-transform: translateX(-3em);
+            transform: translateX(-3em); }
+  15% {
+    -webkit-transform: translateX(4em);
+            transform: translateX(4em); }
+  100% {
+    -webkit-transform: translateX(4em);
+            transform: translateX(4em); } }
 
 .btn {
   display: block;
@@ -213,6 +287,7 @@ html {
   -ms-user-select: none; }
 
 #scroll-to-top {
+  display: none;
   position: fixed;
   bottom: 7%;
   right: 5%;
@@ -265,14 +340,17 @@ body {
     background-color: rgba(244, 244, 239, 0.5); }
     @media (max-width: 900px) {
       .site-content .container {
-        padding: 0.5em; } }
+        padding: 1em; } }
     @media (min-width: 901px) {
       .site-content .container {
-        padding: 1em; } }
+        padding: 1.5em; } }
     @media (min-width: 901px) {
       .site-content .container.home, .site-content .container.contacts, .site-content .container.about-us {
         padding: 1em; } }
-    .site-content .container.home, .site-content .container.contacts {
+    .site-content .container.home {
+      max-width: 1000px;
+      margin: 0 auto; }
+    .site-content .container.contacts {
       max-width: 800px;
       margin: 0 auto; }
     .site-content .container.about-us {
@@ -286,7 +364,7 @@ body {
   @media (max-width: 900px) {
     .gallery-wrapper {
       grid-template-columns: repeat(2, 50%);
-      grid-template-rows: auto 15vh auto 15vh;
+      grid-template-rows: repeat(3, auto 30vh);
       grid-template-areas: "icr1 icr1" "icd1 icd1" "icr2 icr2" "icd2 icd2" "icr3 icr3" "icd3 icd3"; } }
   @media (min-width: 901px) {
     .gallery-wrapper {
@@ -326,7 +404,7 @@ body {
     top: 0;
     left: 0;
     align-content: baseline;
-    padding: 1em;
+    padding: 0.25em;
     background-color: rgba(0, 0, 0, 0.8); }
     @media (max-width: 900px) {
       .site-header .inner {
@@ -445,6 +523,51 @@ body {
 
 .home {
   position: relative; }
+  .home .light {
+    background-color: rgba(255, 255, 0, 0.6); }
+    .home .light > * {
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      margin: 0; }
+  .home .best-offers {
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em; }
+    .home .best-offers p {
+      -webkit-animation: rotate-3d;
+              animation: rotate-3d;
+      -webkit-animation-duration: 5s;
+              animation-duration: 5s;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
+  .home .see-more {
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    transition: background-color 0.5s ease-in;
+    cursor: pointer; }
+    .home .see-more:focus, .home .see-more:hover {
+      background-color: rgba(51, 204, 51, 0.85); }
+      .home .see-more:focus a, .home .see-more:hover a {
+        -webkit-animation: go-to-shop;
+                animation: go-to-shop;
+        -webkit-animation-duration: 5s;
+                animation-duration: 5s;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite; }
+    .home .see-more a {
+      display: block;
+      text-decoration: none;
+      color: #000; }
+      .home .see-more a:after {
+        display: inline-block;
+        content: '\f101';
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900; }
   .home .slide-show {
     display: block;
     position: relative;
@@ -460,6 +583,7 @@ body {
       left: 0;
       right: 0;
       bottom: 0;
+      transition: opacity 1s ease-out;
       overflow: hidden;
       opacity: 0; }
       .home .slide-show .show-offer img {
@@ -486,7 +610,13 @@ body {
     cursor: pointer; }
     .home .left:focus, .home .left:hover, .home .right:focus, .home .right:hover {
       color: var(--theme-1-ink);
-      background-color: rgba(200, 0, 0, 0.7); }
+      background-color: rgba(255, 255, 0, 0.7);
+      -webkit-animation: shakeY;
+              animation: shakeY;
+      -webkit-animation-duration: 0.5s;
+              animation-duration: 0.5s;
+      -webkit-animation-direction: alternate;
+              animation-direction: alternate; }
   .home .left {
     left: 0;
     padding-right: 0.5em;
@@ -614,7 +744,7 @@ body {
           .offers-cnr .offers-nav ul.category li a:focus, .offers-cnr .offers-nav ul.category li a:hover {
             -webkit-animation: shake 0.2s forwards;
                     animation: shake 0.2s forwards; }
-  .offers-cnr .offers ul {
+  .offers-cnr .offers {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     justify-content: center;
@@ -622,18 +752,18 @@ body {
     padding: 0;
     margin: 0; }
     @media (max-width: 600px) {
-      .offers-cnr .offers ul {
+      .offers-cnr .offers {
         grid-row-gap: 1em; } }
     @media (min-width: 601px) and (max-width: 900px) {
-      .offers-cnr .offers ul {
+      .offers-cnr .offers {
         grid-gap: 1em; } }
     @media (min-width: 901px) and (max-width: 1200px) {
-      .offers-cnr .offers ul {
+      .offers-cnr .offers {
         grid-gap: 1.5em; } }
     @media (min-width: 1201px) {
-      .offers-cnr .offers ul {
+      .offers-cnr .offers {
         grid-gap: 2em; } }
-    .offers-cnr .offers ul li {
+    .offers-cnr .offers .offer-cnr {
       position: relative;
       cursor: pointer;
       transition: -webkit-transform 0.3s ease-in;
@@ -643,28 +773,28 @@ body {
       box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.3);
       border-radius: 0.3em;
       overflow: hidden; }
-      .offers-cnr .offers ul li:hover {
+      .offers-cnr .offers .offer-cnr:hover {
         -webkit-transform: scale(1.05);
                 transform: scale(1.05); }
       @media (max-width: 600px) {
-        .offers-cnr .offers ul li {
+        .offers-cnr .offers .offer-cnr {
           grid-column-start: span 12; } }
       @media (min-width: 601px) and (max-width: 900px) {
-        .offers-cnr .offers ul li {
+        .offers-cnr .offers .offer-cnr {
           grid-column-start: span 6; } }
       @media (min-width: 901px) and (max-width: 1200px) {
-        .offers-cnr .offers ul li {
+        .offers-cnr .offers .offer-cnr {
           grid-column-start: span 4; } }
       @media (min-width: 1201px) {
-        .offers-cnr .offers ul li {
+        .offers-cnr .offers .offer-cnr {
           grid-column-start: span 3; } }
-      .offers-cnr .offers ul li .offer-img-wrapper {
+      .offers-cnr .offers .offer-cnr .offer-img-wrapper {
         display: block;
         position: relative;
         overflow: hidden; }
-        .offers-cnr .offers ul li .offer-img-wrapper:before {
+        .offers-cnr .offers .offer-cnr .offer-img-wrapper:before {
           padding-top: 56.25%; }
-        .offers-cnr .offers ul li .offer-img-wrapper img {
+        .offers-cnr .offers .offer-cnr .offer-img-wrapper img {
           display: block;
           width: 100%;
           height: auto;
@@ -674,28 +804,28 @@ body {
           -webkit-transform: translate(-50%, -50%) scale(0.7);
                   transform: translate(-50%, -50%) scale(0.7);
           background-color: #FFF; }
-        .offers-cnr .offers ul li .offer-img-wrapper .offer-views {
+        .offers-cnr .offers .offer-cnr .offer-img-wrapper .offer-views {
           left: 5%;
           background-color: rgba(204, 204, 204, 0.85); }
-          .offers-cnr .offers ul li .offer-img-wrapper .offer-views i {
+          .offers-cnr .offers .offer-cnr .offer-img-wrapper .offer-views i {
             padding-right: 0.5em; }
-          .offers-cnr .offers ul li .offer-img-wrapper .offer-views .offer-views-count {
+          .offers-cnr .offers .offer-cnr .offer-img-wrapper .offer-views .offer-views-count {
             font-weight: bold; }
-        .offers-cnr .offers ul li .offer-img-wrapper .offer-price {
+        .offers-cnr .offers .offer-cnr .offer-img-wrapper .offer-price {
           right: 5%;
           background-color: rgba(51, 204, 51, 0.85); }
-          .offers-cnr .offers ul li .offer-img-wrapper .offer-price i {
+          .offers-cnr .offers .offer-cnr .offer-img-wrapper .offer-price i {
             padding-right: 0.5em; }
-          .offers-cnr .offers ul li .offer-img-wrapper .offer-price .offer-price-amount {
+          .offers-cnr .offers .offer-cnr .offer-img-wrapper .offer-price .offer-price-amount {
             font-weight: bold; }
-      .offers-cnr .offers ul li .offer-title {
+      .offers-cnr .offers .offer-cnr .offer-title {
         display: flex;
         justify-content: center;
         font-family: Verdana, sans-serif;
         font-weight: 400;
         padding: 0.5em 1em;
         background-color: var(--theme-1-aluminium); }
-        .offers-cnr .offers ul li .offer-title p {
+        .offers-cnr .offers .offer-cnr .offer-title p {
           width: 90%;
           white-space: nowrap;
           text-overflow: ellipsis;

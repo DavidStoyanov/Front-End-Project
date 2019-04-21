@@ -30,12 +30,60 @@
     }
 }
 
+@keyframes shakeY {
+    0%, 100% {
+        transform: translateY(-50%);
+    }
+    
+    20%, 80% {
+        transform: translateY(-52%);
+    }
+    
+    40%, 60% {
+        transform: translateY(-47%);
+    }
+    
+    50% {
+        transform: translateY(-55%);
+    }
+}
+
 @keyframes rotate-3d {
-    from {
+    0% {
         transform: rotate3d(0, 0, 0, 0rad);
     }
     
-    to {
-        transform: rotate3d(0, 1, 0, 3.142rad);
+    10% {
+        transform: rotate3d(1, 0, 0, 6.284rad);
+    }
+    
+    20% {
+        transform: rotate3d(0, 0, 0, 0rad);
+    }
+
+    100% {
+        transform: rotate3d(0, 0, 0, 0rad);
+    }
+}
+
+@keyframes go-to-shop {
+    0% {
+        transform: translateX(-5em);
+    }
+    
+    5% {
+        transform: translateX(-1em);
+    }
+    
+    10% {
+        transform: translateX(-3em);
+    }
+    
+    15% {
+        transform: translateX(4em);
+    }
+    
+    100% {
+        transform: translateX(4em);
     }
 }
